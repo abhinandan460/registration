@@ -64,4 +64,17 @@ public class EmployeeController {
 		}
 		return jsonValue;
 	}
+	@GetMapping(path="registration/employee/employees/{empName}")
+	public Object getEmployeesByName(@PathVariable String empName){
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+		String jsonValue="";
+		try {
+			jsonValue=mapper.writeValueAsString(employeeService.getEmployeeByName(empName));
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonValue;
+	}
 }

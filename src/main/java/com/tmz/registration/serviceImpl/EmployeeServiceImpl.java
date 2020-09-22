@@ -58,4 +58,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.findAll();
 	}
 
+	@Override
+	public List<Employee> getEmployeeByName(String empName) {
+		// TODO Auto-generated method stub
+		return employeeRepository.getEmployeeByName(empName);
+	}
+
 }

@@ -11,4 +11,6 @@ public interface EmployeeService {
 	public void deleteEmployeeById(Long id) throws RecordsNotFoundException ;
 	
 	public List<Employee> getAllEmployees() ;
+	
+	public List<Employee> getEmployeeByName(String empName);
 }
